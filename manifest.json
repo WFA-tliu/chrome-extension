@@ -1,0 +1,24 @@
+{
+  "name": "Salesforce Test",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description":  "Chrome extension for Salesforce testing",
+  "content_scripts":[
+    {
+	  "run_at": "document_end",
+	  "matches":[    
+	    "https://wi-fi.my.salesforce.com/*"
+	   ],
+		
+	  "js":["content.js"]
+	}
+  ],
+  
+  "permissions": [
+    "storage",
+    "file://*/*"
+  ]
+
+}
+
+  
