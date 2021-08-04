@@ -1,5 +1,22 @@
 function New_Comments() 
-{ 	  
+{ 	
+	//Step-0, We perform following automation replay mechanism only when there is no Case comment available
+	element_Name = document.getElementsByClassName("noRowsHeader");
+	
+	console.log(element_Name.length)
+	
+	//If the length is 1, it means that there is "noRowsHeader" className aviable saying "No comment available and we just new an automation comment"
+	//If the length is 0, it means that there is no "noRowsHeader" className aviable saying "At least one comment available and we just return directly"
+	if (element_Name.length != 0)
+	{		
+		console.log("No comment available and we just new an automation comment via next action");
+	}
+	else
+	{
+		console.log("At least one comment available and we just return directly");
+		return;
+	}
+  
 	//Step-1. Here below, we use the "document.getElementsByClassName" to address the information in table element <tr> and <td>
 	element_Name = document.getElementsByClassName("dataCol last col02");
 	console.log(element_Name.length)
